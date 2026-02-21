@@ -385,6 +385,7 @@ func spitdodging()
 import Cosmetics/AuroraBorealis
 import Hats/Skully
 import Foes/PallasCrown
+import Foes/SurferGuardian
 import Pets/CatBalloon
 
 var freeChest = import UI/FreeChestTracker
