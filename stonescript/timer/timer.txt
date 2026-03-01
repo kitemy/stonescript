@@ -18,9 +18,9 @@ Log:
 
 */
 
-var utils=import Sorgin/Utils
-var stringExt=import Sorgin/Ext/String
-var storageExt=import Sorgin/Ext/Storage
+var utils=import utilstimer
+var stringExt=import String
+var storageExt=import Storage
 
 var coordsX
 var coordsY
