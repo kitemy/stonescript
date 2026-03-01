@@ -9,66 +9,9 @@
   equipR *0 shield
  equip @item.right@
 
-// BFG TRICK
-var delay = 0
-func BFG()
- screen.Next()
-  delay++
-  ?delay = 15
-   equip blade
-   activate R
-   screen.ResetOffset()
-   delay = 0
-  return True
- return False
-
-/*?item.GetCooldown(＂blade＂) <= 0
-^&foe.GetCount
-^(69-screen.FromWorldX(pos.x)) >= 14
-^&item.CanActivate()
- BFG()*/
-
-// MOONJUGGLE
-func moonjuggle(sword1, sword2)
- ?totaltime % 4 = 0
-  equipL @sword2@
-  equipR @sword1@
- :?totaltime % 4 = 1
-  equipL moon
-  equipR @sword1@
- :?totaltime % 4 = 2
-  equipL @sword1@
-  equipR @sword2@
- :?totaltime % 4 = 3
-  equipL moon
-  equipR @sword2@
-
-// MOONDIALING
-func moondialing(sword1, sword2)
- ?totaltime % 3 = 0
-  equipL moon
-  equipR @sword1@
- :?totaltime % 3 = 1
-  equipL moon
-  equipR @sword2@
- :?totaltime % 3 = 2
-  equipL @sword1@
-  equipR @sword2@
- 
-// FUNCTIONS
-func voidweav()
- equipL triskel
- equipR aether talisman
- ?item.CanActivate()
-  activate R
-
-var loopcount = 0
-?loc.loop = True
- loopcount += 1
-
 // DEADWOOD CANYON
 ?loc = deadwood
- ?loopcount = 0
+ ?loopcount = 0 & loc.stars ! 5
   equipL triskel
   equipR cult_mask
   ?item.potion = berserk
