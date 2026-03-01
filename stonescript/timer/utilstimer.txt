@@ -1,0 +1,55 @@
+var stringExt=import String
+
+func isLevel()
+ for x:[shop,intro,cross,waterfall]
+  ?loc=x
+   return false
+ return !loc.isQuest
+
+
+// se supone es mas rápido que usar time.FormatDigital(totaltime)
+func parseFrames(frames,padM)
+ return parseTime(frames/30,padM)
+
+func parseTime(x,padM)
+ var minutes
+ var seconds
+ minutes=math.FloorToInt(x/60)+""
+ ?padM
+  minutes=stringExt.PadL(minutes,2,"0")
+ seconds=stringExt.PadL(math.FloorToInt(x%60)+"",2,"0")
+ return minutes+":"+seconds
+
+
+
+
+//	GetBuffCount(buffs.string,strength)
+func GetBuffCount(str,name)
+ ?str=name
+  var buffString=string.Split(str,":")
+  return int.Parse(buffString[buffString.IndexOf(name)+1])
+ return 0
+
+//	GetBuffTime(buffs.string,strength)
+func GetBuffTime(str,name)
+ ?str=name
+  var buffString=string.Split(str,":")
+  var x=string.Split(buffString[buffString.IndexOf(name)+2],",")
+  //>`0,1,esto: @str@
+  //>`0,9,esta: @x[0]@
+  //loc.Pause()
+  return int.Parse(x[0])
+ return 0
+
+
+
+func GetLastFoeId(map,stars)
+ ?rocky_plateau=map
+  return ""
+ :?deadwood_valley=map
+  ?stars<6
+   return "tree_boss"
+  :
+   return "poena"
+ :?deadwood_valley=map
+  return ""
