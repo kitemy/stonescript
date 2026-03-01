@@ -1,0 +1,5 @@
+# interface.txt
+
+This file contains the interface specifications for the StoneScript project.
+
+... (content from original interface.txt) ...
