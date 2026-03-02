@@ -18,6 +18,8 @@ var dir = "https://raw.githubusercontent.com/
 
 sys.SetFileUrl(dir)
 
-import UI/Timer
-import interface
-import mainscript
+var importUse = 0
+?importUse = 1
+  import UI/Timer
+  import interface
+  import mainscript
