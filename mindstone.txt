@@ -1,0 +1,23 @@
+sys.cacheRemoteFiles = false
+
+import Cosmetics/AuroraBorealis
+import Hats/Skully
+import Foes/PallasCrown
+import Foes/SurferGuardian
+import Pets/CatBalloon
+
+var freeChest = import UI/FreeChestTracker
+freeChest.Main()
+
+var Scarf = import Cosmetics/WavyScarf
+Scarf.scarfColor = #rain
+Scarf.ScarfMain()
+
+var dir = "https://raw.githubusercontent.com/
+^kitemy/stonescript/refs/heads/main"
+
+sys.SetFileUrl(dir)
+
+import UI/Timer
+import interface
+import mainscript

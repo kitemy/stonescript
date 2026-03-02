@@ -383,19 +383,3 @@ func spitdodging()
   ?incomingSpit = totaltime
   ^&incomingSpit2 > incomingSpit
    incomingSpit = incomingSpit2
-
-// FISHING
-?loc = waterfall
- import Fishing
-
-// COSMETICS
-import Cosmetics/AuroraBorealis
-import Hats/Skully
-import Foes/PallasCrown
-import Foes/SurferGuardian
-import Pets/CatBalloon
-
-var freeChest = import UI/FreeChestTracker
-freeChest.Main()
-
-import Cosmetics/WavyScarf
