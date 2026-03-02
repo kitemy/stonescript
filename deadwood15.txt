@@ -1,0 +1,98 @@
+var u = import utils
+u.updateAll()
+
+?loc.begin
+  brew wood + bronze
+
+?screen.i = 4 & u.loops % 2 = 0 & u.CanUse("blade")
+  u.BFG()
+:?u.loops = 0
+  ?totaltime < 3
+    equipL trisk
+    equipR compound
+  :?summon.count = 0 & item.GetCooldown("quarterstaff") > 0 
+    equipL aether talisman
+    equipR mask
+    activate L
+  :?foe.distance > 16 | foe.distance > 10 & !u.CanDashBash()
+    u.QuarterUse()
+    equipL trisk
+    equipR mask
+  :?foe.distance > 10
+    u.DashBash()
+  :
+    ?foe ! boss
+      equipL grap
+      equipR mask
+    :
+      ?foe = "phase1" & foe.distance <= 20
+        equip stone staff
+      :?foe = "phase2"
+        ?foe.state = 32 & foe.time >= 44
+        ^& item.CanActivate()
+        ^& item.GetCooldown(＂wand_ice＂) <= 0
+          equipL frost wand
+          activate L
+        :?foe.distance <= 10
+          equip stone staff
+:
+  ?u.enduse > frames & u.loops % 2 = 0
+    ?u.CanUse("staff_fire") & armor*10+armor.f>60
+      equip staff_hidden_fire
+      activate r
+  :?pickup.distance < 10
+    equipL trisk
+    equipR star
+  :?screen.i = 4 & u.loops % 2 = 1 
+  ^& foe.state = 2 & foe ! spawner
+    equipR ice shield ai *0 +0 shiny
+    equipL trisk
+  :?foe.distance > 16
+    u.QuarterUse()
+    ?foe.distance > 25
+      u.maskound()
+    :
+      u.RuneShield()
+  :?foe.distance > 10
+    ?u.CanDashBash()
+      u.DashBash()
+    :?some logic..
+      ...
+    :
+      u.RuneShield()
+  :
+    ?foe ! boss
+      ?foe.distance > 7
+        u.smoothcast(["shovel"])
+      :?foe.distance > 4
+        u.smoothcast
+        ^(["dU big aether sword shiny","dU big aether sword -shiny"])
+      :
+        equipL dU big aether sword shiny
+        equipR dU big aether sword -shiny
+    :
+      ?foe = "phase"
+        ? (foe.hp < 1 | foe = poena)
+          ?u.CanUse("bardiche")
+            equip bardiche
+            activate R
+          :?u.CanUse("heavy_hammer")
+            equip heavy_hammer
+            activate R
+          :?u.CanUse("cultist_mask")
+            equip cultist_mask
+            activate R
+          :?foe = "phase1"
+            ?item.potion = berserk
+              activate potion
+            :?u.CanUse("staff_poison")
+              equip berserker
+                activate R
+            :?foe.distance <= 10
+              equip stone staff
+          :?foe = "phase2"
+            ?foe.state = 32 & u.canUse("wand_ice")
+              equipL frost wand
+              activate L
+            :
+              equip stone staff

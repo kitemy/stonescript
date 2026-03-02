@@ -1,5 +1,16 @@
 sys.cacheRemoteFiles = false
 
+// ATTACK ANIMATION CANCEL
+?item.left.state = 3
+  equipL trisk
+  equipL @item.left@
+?item.right.state = 3
+  ?totaltime % 2 = 0
+   equipR throw
+  :
+   equipR trisk
+  equip @item.right@
+
 import Cosmetics/AuroraBorealis
 import Hats/Skully
 import Foes/PallasCrown
