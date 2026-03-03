@@ -56,8 +56,6 @@ u.updateAll()
   :?foe.distance > 10
     ?u.CanDashBash()
       u.DashBash()
-    :?some logic..
-      ...
     :
       u.RuneShield()
   :
