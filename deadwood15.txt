@@ -26,7 +26,7 @@ u.updateAll()
       equipR mask
     :
       ?foe = "phase1"
-        equip stone staff
+        moonjuggling("dL vigor -shiny","dI ice -shiny")
       :?foe = "phase2"
         ?foe.state = 32 & foe.time >= 44
         ^& item.CanActivate()
@@ -34,16 +34,16 @@ u.updateAll()
           equipL frost wand
           activate L
         :?foe.distance <= 10
-          equip stone staff
+          moonjuggling("dL vigor -shiny","dI ice -shiny")
 :
-  ?u.enduse > frames & u.loops % 2 = 0
+  ?u.enduse > 50 & u.loops % 2 = 0
     activate potion
   :?pickup.distance < 10
     equipL trisk
     equipR star
   :?screen.i = 4 & u.loops % 2 = 1 
   ^& foe.state = 2 & foe ! spawner
-    equipR ice shield ai *0 +0 shiny
+    equipR ice shield ai
     equipL trisk
   :?foe.distance > 16
     u.QuarterUse()
@@ -85,10 +85,10 @@ u.updateAll()
               equip berserker
                 activate R
             :?foe.distance <= 10
-              equip stone staff
+              moonjuggling("dL vigor -shiny","dI ice -shiny")
           :?foe = "phase2"
             ?foe.state = 32 & u.CanUse("wand_ice")
               equipL frost wand
               activate L
             :
-              equip stone staff
+              moonjuggling("dL vigor -shiny","dI ice -shiny")
