@@ -28,7 +28,7 @@ u.updateAll()
       equipR mask
     :
       ?foe = "phase1"
-        u.moonjuggling("dL vigor -shiny","dI ice -shiny")
+        u.moonjuggling("dL vigor prismatic","dI ice shiny")
       :?foe = "phase2"
         ?foe.state = 32 & foe.time >= 44
         ^& item.CanActivate()
@@ -36,7 +36,7 @@ u.updateAll()
           equipL frost wand
           activate L
         :?foe.distance <= 10
-          u.moonjuggling("dL vigor -shiny","dI ice -shiny")
+          u.moonjuggling("dL vigor prismatic","dI ice shiny")
 :
   ?u.enduse > 50 & u.loops % 2 = 0
     activate potion
@@ -87,10 +87,10 @@ u.updateAll()
               equip berserker
                 activate R
             :?foe.distance <= 10
-              u.moonjuggling("dL vigor -shiny","dI ice -shiny")
+              u.moonjuggling("dL vigor prismatic","dI ice shiny")
           :?foe = "phase2"
             ?foe.state = 32 & u.CanUse("wand_ice")
               equipL frost wand
               activate L
             :
-              u.moonjuggling("dL vigor -shiny","dI ice -shiny")
+              u.moonjuggling("dL vigor prismatic","dI ice shiny")
