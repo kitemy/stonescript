@@ -34,7 +34,7 @@ u.updateAll()
         ^& u.CanUse("wand_ice")
           equipL frost wand
           activate L
-        :?u.CanUse("wand_vigor")
+        :?u.CanUse("wand_vigor") & foe.state = 2
         ^& foe.debuffs.string = "mirror"
           equipL reset wand
           activate L
