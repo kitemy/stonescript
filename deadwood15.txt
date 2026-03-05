@@ -37,11 +37,9 @@ u.updateAll()
         :
           u.moonjuggling("dL vigor prismatic","dI ice shiny")
 :
-  ?u.enduse > 30 & u.loops % 2 = 0
+  ?u.enduse > 10 & u.loops % 2 = 0
     equip infernal
     activate R
-    ?item.potion ! empty
-      activate potion
   :?pickup.distance < 10
     equipL trisk
     equipR star
