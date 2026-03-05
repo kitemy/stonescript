@@ -4,7 +4,7 @@ u.updateAll()
 ?loc.begin
   brew wood + bronze
 
-?screen.i = 4 & u.loops % 2 = 0 & u.CanUse("blade")
+?screen.i = 3 & u.loops % 2 = 0 & u.CanUse("blade")
   u.BFG()
 :?u.loops = 0
   ?totaltime < 3
@@ -34,7 +34,7 @@ u.updateAll()
         ^& u.CanUse("wand_ice")
           equipL frost wand
           activate L
-        :?u.CanUse("wand_vigor") & ai.enabled
+        :?u.CanUse("wand_vigor")
           equipL vigor
           activate L
         :
@@ -47,8 +47,8 @@ u.updateAll()
     equipR star
   :?screen.i = 4 & u.loops % 2 = 1 
   ^& foe.state = 2 & foe ! spawner
-    equipR ice shield ai
     equipL trisk
+    equipR ice shield ai
   :?foe.distance > 16
     u.QuarterUse()
     ?foe.distance > 25
