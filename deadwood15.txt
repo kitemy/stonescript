@@ -39,10 +39,13 @@ u.updateAll()
 :
   ?u.enduse > 50 & u.loops % 2 = 0
     activate potion
+    ?u.CanUse("staff_fire") & armor*10 + armor.f>60
+      equip infernal
+      activate R
   :?pickup.distance < 10
     equipL trisk
     equipR star
-  :?screen.i = 4 & u.loops % 2 = 1 
+  :?screen.i = 4
   ^& foe.state = 2 & foe ! spawner
     equipL trisk
     equipR ice shield ai
