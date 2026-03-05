@@ -40,7 +40,7 @@ u.updateAll()
   ?u.enduse > 30 & u.loops % 2 = 0
     ?item.potion ! empty
       activate potion
-    :u.CanUse("staff_fire")
+    :?u.CanUse("staff_fire")
       equip infernal
       activate R
   :?pickup.distance < 10
