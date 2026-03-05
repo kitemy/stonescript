@@ -39,9 +39,9 @@ u.updateAll()
 :
   ?u.enduse > 30 & u.loops % 2 = 0
     activate potion
-    ?u.CanUse("staff_fire")
-      equip infernal
-      activate R
+  :?u.CanUse("staff_fire") & totaltime < 10
+    equip infernal
+    activate R
   :?pickup.distance < 10
     equipL trisk
     equipR star
