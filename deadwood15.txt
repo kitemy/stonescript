@@ -42,6 +42,7 @@ u.updateAll()
       activate potion
     :?u.CanUse("staff_fire")
       equip infernal
+      whynoinfernal = 1
       activate R
   :?pickup.distance < 10
     equipL trisk
