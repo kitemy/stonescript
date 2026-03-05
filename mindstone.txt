@@ -24,6 +24,8 @@ var Scarf = import Cosmetics/WavyScarf
 Scarf.scarfColor = #rain
 Scarf.ScarfMain()
 
+disable hud u
+
 var dir = "https://raw.githubusercontent.com/
 ^kitemy/stonescript/refs/heads/main"
 
