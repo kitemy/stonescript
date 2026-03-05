@@ -35,6 +35,7 @@ u.updateAll()
           equipL frost wand
           activate L
         :?u.CanUse("wand_vigor")
+        ^& foe.state = 2
           equipL vigor
           activate L
         :
