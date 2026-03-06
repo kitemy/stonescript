@@ -14,7 +14,6 @@ u.updateAll()
     equipL aether talisman
     equipR mask
     activate L
-  :?item.potion ! empty & summon.count = 1 & u.enduse = 0
     activate potion
   :?foe.distance > 16 | foe.distance > 10 & !u.CanDashBash()
     u.QuarterUse()
