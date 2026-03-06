@@ -37,7 +37,7 @@ u.updateAll()
         :
           u.moonjuggling("dL vigor prismatic","dI ice shiny")
 :
-  ?u.loops % 2 = 0 & u.enduse > 0
+  ?u.enduse > 0 & u.loops % 2 = 0
     activate potion
     ?u.CanUse("staff_fire")
       equip infernal
