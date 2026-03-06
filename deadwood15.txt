@@ -41,7 +41,7 @@ u.updateAll()
     ?u.enduse > 30 & ?u.CanUse("staff_fire")
       equip infernal
       activate R
-    :
+    :?u.enduse > 5
       activate potion
   :?pickup.distance < 10
     equipL trisk
