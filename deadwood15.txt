@@ -10,11 +10,12 @@ u.updateAll()
   ?totaltime < 3
     equipL trisk
     equipR compound
-    activate potion
   :?summon.count = 0 & item.GetCooldown("quarterstaff") > 0 
     equipL aether talisman
     equipR mask
     activate L
+  :?summon.count = 1 & item.potion ! empty & u.enduse = 0
+    activate potion
   :?foe.distance > 16 | foe.distance > 10 & !u.CanDashBash()
     u.QuarterUse()
     equipL trisk
@@ -37,9 +38,14 @@ u.updateAll()
           u.moonjuggling("dL vigor prismatic","dI ice shiny")
 :
   ?u.enduse > 10 & u.loops % 2 = 0
-    activate potion
-    equip infernal
-    activate R
+    ?item.potion ! empty
+      activate potion
+    :?u.CanUse("staff_fire")
+      equip infernal
+      activate R
+    :
+      equip infernal
+      activate R
   :?pickup.distance < 10
     equipL trisk
     equipR star
