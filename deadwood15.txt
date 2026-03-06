@@ -14,6 +14,8 @@ u.updateAll()
     equipL aether talisman
     equipR mask
     activate L
+  :?item.potion ! empty & summon.count = 1 & u.enduse = 0
+    activate potion
   :?foe.distance > 16 | foe.distance > 10 & !u.CanDashBash()
     u.QuarterUse()
     equipL trisk
@@ -35,11 +37,11 @@ u.updateAll()
         :
           u.moonjuggling("dL vigor prismatic","dI ice shiny")
 :
-  ?u.loops % 2 = 0
-    ?u.enduse = 30 & u.CanUse("staff_fire")
+  ?u.loops % 2 = 0 & u.enduse > 0
+    ?u.CanUse("staff_fire")
       equip infernal
       activate R
-    ?u.enduse = 29
+    :
       activate potion
   :?pickup.distance < 10
     equipL trisk
@@ -96,5 +98,3 @@ u.updateAll()
             activate L
           :
             u.moonjuggling("dL vigor prismatic","dI ice shiny")
-?item.potion ! empty & summon.count = 1 & u.enduse = 0
-  activate potion
