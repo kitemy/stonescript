@@ -10,11 +10,11 @@ u.updateAll()
   ?totaltime < 3
     equipL trisk
     equipR compound
+    activate potion
   :?summon.count = 0 & item.GetCooldown("quarterstaff") > 0 
     equipL aether talisman
     equipR mask
     activate L
-    activate potion
   :?foe.distance > 16 | foe.distance > 10 & !u.CanDashBash()
     u.QuarterUse()
     equipL trisk
